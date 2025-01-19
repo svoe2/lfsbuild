@@ -4,17 +4,17 @@ Linux from scratch
 # Structure
 
 `
-├── bin
-│   └── busybox
-├── boot
-│   ├── extlinux
-│   │   └── extlinux.conf // Startup configuration
-│   └── vmlinuz-6.6.72 // Your linux kernel
-├── dev
-├── Init // My simple init file
-├── proc
-├── sbin -> /bin
-└── sys
+├── bin<br>
+│   └── busybox<br>
+├── boot<br>
+│   ├── extlinux<br>
+│   │   └── extlinux.conf // Startup configuration<br>
+│   └── vmlinuz-6.6.72 // Your linux kernel<br>
+├── dev<br>
+├── Init // My simple init file<br>
+├── proc<br>
+├── sbin -> /bin<br>
+└── sys<br>
 
 `
 
