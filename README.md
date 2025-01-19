@@ -8,10 +8,10 @@ Linux from scratch
 │   └── busybox
 ├── boot
 │   ├── extlinux
-│   │   └── extlinux.conf // Startup configuration
-│   └── vmlinuz-6.6.72 // Your linux kernel
+│   │   └── extlinux.conf # Startup configuration
+│   └── vmlinuz-6.6.72 # Your linux kernel
 ├── dev
-├── Init // My simple init file
+├── Init # My simple init file
 ├── proc
 ├── sbin -> /bin
 └── sys
