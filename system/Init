@@ -1,0 +1,8 @@
+#!/bin/busybox sh
+
+/bin/busybox --install -s
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+exec sh

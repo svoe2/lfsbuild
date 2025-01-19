@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+dd if=/dev/zero of=release.img bs=1M count=1024
+
+echo -e "n\np\n1\n\n\n\na\nw" | fdisk release.img
+
+LOOP_DEVICE=$(losetup -P -f --show release.img)
+
+mkfs.ext4 ${LOOP_DEVICE}p1
+
+mkdir -p /mnt/system
+
+mount ${LOOP_DEVICE}p1 /mnt/system
+
+cp -r system/* /mnt/system
+
+extlinux --install /mnt/system/boot/extlinux
+
+umount /mnt/system
+losetup -d ${LOOP_DEVICE}
+
+dd if=/usr/lib/syslinux/mbr/mbr.bin of=release.img bs=440 count=1 conv=notrunc
+
+qemu-system-x86_64 -hda release.img -nographic -m 512
